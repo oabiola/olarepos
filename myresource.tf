@@ -7,14 +7,33 @@ terraform {
   
 }
 provider "aws" {
-    region = " "
-    profile = " "
+    region = var.AWS_REGION
+    access_key = var.AWS_ACCESS_KEY_ID
+    secret_key = var.AWS_SECRET_ACCESS_KEY
+    
   
 }
+
+variable "AWS_REGION" {
+    type        = string
+    default = "us-east-1"
+}
+variable "AWS_ACCESS_KEY_ID" {
+    type    = string
+    default = "AKIAZFPXALGHIXKO25WI"
+}
+variable "AWS_SECRET_ACCESS_KEY" {
+    type     = string
+    default ="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"
+}
+
+  
+
+
 resource "aws_instance" "web1" {
-    ami = " "
-    instance_type = " "
+    ami = "ami-067d1e60475437da2"
+    instance_type = "t2.micro"
     tags = {
-      Name = " "
+      Name = "myinstance1"
     }
 }
