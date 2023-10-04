@@ -1,4 +1,20 @@
-resource "aws _instance" "web" {
-    ami           = "${var.ami}"
-    instance_type               = "t2.micro"
+terraform {
+    required_providers {
+      aws = {
+        source  = "hashicorp/aws"
+      }
+    }
+  
+}
+provider "aws" {
+    region = " "
+    profile = " "
+  
+}
+resource "aws_instance" "web1" {
+    ami = " "
+    instance_type = " "
+    tags = {
+      Name = " "
+    }
 }
