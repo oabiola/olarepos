@@ -7,14 +7,24 @@ terraform {
   
 }
 provider "aws" {
-    region = " "
-    profile = " "
+    region = var.AWS_REGION
+    access_key = var.AWS_ACCESS_KEY_ID
+    secret_key = var.AWS_SECRET_ACCESS_KEY
+    
   
 }
+
+variable "AWS_REGION" {}
+variable "AWS_ACCESS_KEY_ID" {}
+variable "AWS_SECRET_ACCESS_KEY" {}
+
+  
+
+
 resource "aws_instance" "web1" {
-    ami = " "
-    instance_type = " "
+    ami = "ami-067d1e60475437da2"
+    instance_type = "t2.micro"
     tags = {
-      Name = " "
+      Name = "myinstance1"
     }
 }
