@@ -14,9 +14,18 @@ provider "aws" {
   
 }
 
-variable "AWS_REGION" {"us-east-1"}
-variable "AWS_ACCESS_KEY_ID" {"AKIAZFPXALGHIXKO25WI"}
-variable "AWS_SECRET_ACCESS_KEY" {"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"}
+variable "AWS_REGION" {
+    type        = string
+    default = "us-east-1"
+}
+variable "AWS_ACCESS_KEY_ID" {
+    type    = string
+    default = "AKIAZFPXALGHIXKO25WI"
+}
+variable "AWS_SECRET_ACCESS_KEY" {
+    type     = string
+    default ="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"
+}
 
   
 
