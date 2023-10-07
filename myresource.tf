@@ -33,6 +33,8 @@ variable "AWS_SECRET_ACCESS_KEY" {
 resource "aws_instance" "web1" {
     ami = "ami-067d1e60475437da2"
     instance_type = "t2.micro"
+   subnet_id = aws_subnet.publ.id
+
     tags = {
       Name = "myinstance1"
     }
