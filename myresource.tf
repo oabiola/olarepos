@@ -27,7 +27,12 @@ variable "AWS_SECRET_ACCESS_KEY" {
     default ="tw/dN0/fDdO5h7bx4GWixYUu/CTNOyBdBcALfszW"
 }
 
-  
+  resource "aws_vpc" "main" {
+  cidr_block       = "10.1.0.0/16"
+  enable_dns_hostnames = true
+  }
+
+
 resource "aws_subnet" "publ" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.1.0.0/24"
