@@ -28,15 +28,13 @@ variable "AWS_SECRET_ACCESS_KEY" {
 }
 
   resource "aws_vpc" "main" {
-    count = 0
   cidr_block       = "10.1.0.0/16"
   enable_dns_hostnames = true
   }
 
 
 resource "aws_subnet" "publ" {
-    count = 0
-  vpc_id     = aws_vpc.main[count.index].id
+  vpc_id     = aws_vpc.main.id
   cidr_block = "10.1.0.0/24"
   map_public_ip_on_launch = true 
 }
@@ -45,7 +43,7 @@ resource "aws_subnet" "publ" {
 resource "aws_instance" "web1" {
     ami = "ami-067d1e60475437da2"
     instance_type = "t2.micro"
-   subnet_id = aws_subnet.publ[count.index].id
+   subnet_id = aws_subnet.publ.id
 
     tags = {
       Name = "myinstance1"
