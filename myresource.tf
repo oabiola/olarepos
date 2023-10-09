@@ -23,7 +23,7 @@ variable "AWS_SECRET_ACCESS_KEY" {}
 
 
 resource "aws_s3_bucket" "main-bucket" {
-  bucket = "my-tf-test-bucket1"
+  bucket = "my-tf-storage-test-bucket2"
 
   tags = {
     Name        = "storagebucket1"
