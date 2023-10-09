@@ -22,12 +22,12 @@ variable "AWS_SECRET_ACCESS_KEY" {}
 
 
 
-resource "aws_s3_bucket" "main-bucket" {
-  bucket = "my-tf-storage-test-bucket2"
-
+resource "aws_instance" "web1" {
+  ami           = "ami-067d1e60475437da2"
+  instance_type = "t2.micro"
+  subnet_id = "subnet-0f444c910c3d54255"
+  
   tags = {
-    Name        = "storagebucket1"
-
+    Name = "myec2instance1"
   }
 }
-
