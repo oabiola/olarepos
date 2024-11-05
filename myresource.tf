@@ -23,7 +23,7 @@ variable "AWS_SECRET_ACCESS_KEY" {}
 
 
 resource "aws_instance" "web1" {
-  ami           = "ami-067d1e60475437da2"
+  ami           = var.AMI
   instance_type = var.instance_type
   subnet_id = "subnet-0f444c910c3d54255"
   
